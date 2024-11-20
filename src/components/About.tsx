@@ -26,7 +26,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
       icon: LinkedinIcon,
       color: 'bg-gradient-to-r from-[#0A66C2] to-[#0077B5]',
       bgColor: 'bg-gray-900/5 dark:bg-gray-800/50',
-      link: 'https://linkedin.com/kamrul-hasan-dev'
+      link: 'https://linkedin.com/in/kamrul-hasan-dev'
     },
     {
       platform: 'GitHub',
