@@ -1,10 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, FileText, User, Star, ArrowUpRight, Award, Users, Eye, ExternalLink, LinkedinIcon, GithubIcon, MailIcon, TwitterIcon } from 'lucide-react';
+import { X, Star, Award, LinkedinIcon, GithubIcon,  TwitterIcon } from 'lucide-react';
 import botImage from '../assets/images/bot.png';
-import fiverr from '../assets/images/fiverr.png';
-import dribbble from '../assets/images/dribbble.png';
-import behance from '../assets/images/behance.png';
-import pinterest from '../assets/images/pinterest.png';
 import bannerVideo from '../assets/images/banner.mp4';
 
 interface AboutProps {
@@ -21,7 +17,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
       icon: Award,
       color: 'bg-gradient-to-r from-[#1DBF73] to-[#19A463]',
       bgColor: 'bg-gray-900/5 dark:bg-gray-800/50',
-      link: 'https://www.fiverr.com/yourusername'
+      link: 'https://www.fiverr.com/sm_kamrul_hasan'
     },
     {
       platform: 'LinkedIn',
@@ -30,7 +26,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
       icon: LinkedinIcon,
       color: 'bg-gradient-to-r from-[#0A66C2] to-[#0077B5]',
       bgColor: 'bg-gray-900/5 dark:bg-gray-800/50',
-      link: 'https://linkedin.com/yourusername'
+      link: 'https://linkedin.com/kamrul-hasan-dev'
     },
     {
       platform: 'GitHub',
@@ -39,7 +35,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
       icon: GithubIcon,
       color: 'bg-gradient-to-r from-[#2D333B] to-[#1A1D21]',
       bgColor: 'bg-gray-900/5 dark:bg-gray-800/50',
-      link: 'https://github.com/yourusername'
+      link: 'https://github.com/Kallolx'
     },
     {
       platform: 'Twitter',
@@ -48,7 +44,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
       icon: TwitterIcon,
       color: 'bg-gradient-to-r from-[#1DA1F2] to-[#0C86D4]',
       bgColor: 'bg-gray-900/5 dark:bg-gray-800/50',
-      link: 'https://twitter.com/yourusername'
+      link: 'https://x.com/khxKallol'
     }
   ];
 
