@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Paperclip, Smile, Bot, Sparkles, Phone, ExternalLink, Package, Code2, Rocket, Brain, Palette, Zap, Star, Lightbulb, Smartphone, Workflow, Linkedin, Github, Mail, Twitter } from 'lucide-react';
-import botImage from '../assets/images/bot.png';
+import { X, Send, Paperclip, Smile, Bot, Workflow, Linkedin, Github, Mail, Twitter, Rocket, Code2, Brain } from 'lucide-react';
 
 interface Message {
   type: 'bot' | 'user';
@@ -11,17 +10,12 @@ interface Message {
 }
 
 // Add new interfaces for suggestions
-interface SuggestionTab {
-  id: string;
-  label: string;
-  icon: any;
-  questions: SuggestionQuestion[];
-}
-
-interface SuggestionQuestion {
-  question: string;
-  answer: string;
-}
+// interface SuggestionTab {
+//   id: string;
+//   label: string;
+//   icon: any;
+//   questions: SuggestionQuestion[];
+// }
 
 const initialMessages: Message[] = [
   {
@@ -270,22 +264,22 @@ Feel free to ask anything! I'm here to help! 💫`;
   };
 
   // Add this function to handle suggestion clicks
-  const handleSuggestionClick = (question: string, answer: string) => {
-    const userMessage: Message = {
-      type: 'user',
-      content: question,
-      timestamp: new Date()
-    };
-    
-    const botMessage: Message = {
-      type: 'bot',
-      content: answer,
-      timestamp: new Date(),
-      isAI: true
-    };
-
-    setMessages(prev => [...prev, userMessage, botMessage]);
-  };
+  // const handleSuggestionClick = (question: string, answer: string) => {
+  //   const userMessage: Message = {
+  //     type: 'user',
+  //     content: question,
+  //     timestamp: new Date()
+  //   };
+  //   
+  //   const botMessage: Message = {
+  //     type: 'bot',
+  //     content: answer,
+  //     timestamp: new Date(),
+  //     isAI: true
+  //   };
+  //
+  //   setMessages(prev => [...prev, userMessage, botMessage]);
+  // };
 
   // Add these styles to your CSS
   const styles = `
