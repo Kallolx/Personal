@@ -12,13 +12,16 @@ interface Project {
   year: string;
   category: string;
   link?: string;
+  description?: string;
+  technologies?: string[];
+  image?: string;
 }
 
 const tabs: Tab[] = [
   { id: 'all', label: 'All' },
   { id: 'web', label: 'Web' },
-  { id: 'design', label: 'Design' },
   { id: 'mobile', label: 'Mobile' },
+  { id: 'saas', label: 'SaaS' },
 ];
 
 const projects: Project[] = [
@@ -27,6 +30,15 @@ const projects: Project[] = [
   { id: '3', title: 'Social Media App', year: '2023', category: 'mobile', link: '#' },
   { id: '4', title: 'Travel Booking System', year: '2022', category: 'web', link: '#' },
   { id: '5', title: 'Brand Identity Design', year: '2023', category: 'design', link: '#' },
+  {
+    id: "dhaka-metro",
+    title: "Dhaka Metro Rail Guide",
+    year: "2024",
+    category: "web",
+    description: "A comprehensive web application for Dhaka Metro Rail, featuring real-time updates, route planning, and fare calculations for Bangladesh's first metro rail system.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    image: "/path/to/metro-image.jpg"
+  },
 ];
 
 export default function ProjectTabs() {
