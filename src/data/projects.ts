@@ -17,7 +17,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'dhaka-metro',
-    title: 'Dhaka Metro Ticket System',
+    title: 'Easy Metro',
     description: 'A comprehensive web application for Dhaka Metro Rail, featuring real-time updates, route planning, and fare calculations.',
     longDescription: `The Dhaka Metro Rail Guide is a modern web application designed to help commuters navigate Bangladesh's first metro rail system. 
     Built with React and TypeScript, it provides essential features like route planning, fare calculation, and station information.
@@ -40,36 +40,41 @@ export const projects: Project[] = [
     github: 'https://github.com/Kallolx/dhaka-metro',
     demo: 'https://dhaka-metro.vercel.app',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    gallery: ['https://thereport.live/storage/bangladesh-vs-england/metro-rail.jpg']
+    gallery: [
+      'https://thereport.live/storage/bangladesh-vs-england/metro-rail.jpg', 
+      'https://media.discordapp.net/attachments/1313928548616241163/1313986744013820016/image.png?ex=67522104&is=6750cf84&hm=86f84a67e1b5c50aae0d47918b99f46f418c829f90f0afa21a686de361f67487&=&format=webp&quality=lossless&width=607&height=322', 
+      'https://media.discordapp.net/attachments/1313928548616241163/1313987765087637594/image.png?ex=675221f7&is=6750d077&hm=74f35f4db66574e0022fc40bd0458c2d7a7955d51b09407d31a037895b44a47e&=&format=webp&quality=lossless&width=607&height=351', 
+      'https://media.discordapp.net/attachments/1313928548616241163/1313988048333045801/image.png?ex=6752223b&is=6750d0bb&hm=aff153c5debf165baed6886c3fbef0fadcc48d65fe7065bf65200a26bf4a86e0&=&format=webp&quality=lossless&width=1136&height=668'
+    ]
   },
   {
     id: '2',
-    title: 'CryptoTrader X',
-    description: 'Advanced cryptocurrency trading platform with real-time analytics',
-    longDescription: `CryptoTrader X is a sophisticated cryptocurrency trading platform that combines real-time market data 
-    with advanced technical analysis tools. The platform offers institutional-grade security while maintaining an intuitive 
-    interface for both novice and experienced traders.
+    title: 'StudentBuddy',
+    description: 'A comprehensive tool for students to manage their academic life.',
+    longDescription: `StudentBuddy is an innovative platform designed to assist students in managing their academic tasks, 
+    schedules, and resources effectively. The application provides features such as task management, calendar integration, 
+    and resource sharing to enhance the student experience.
 
-    Built with high-performance WebSocket connections and real-time data processing, CryptoTrader X handles millions of 
-    price updates per second while providing seamless trading execution. The platform includes advanced charting capabilities, 
-    automated trading strategies, and comprehensive portfolio management tools.`,
-    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?q=80&w=2071',
+    Built with modern web technologies, StudentBuddy offers a user-friendly interface and seamless navigation, making it easy 
+    for students to stay organized and focused on their studies.`,
+    image: 'https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg',
     year: '2024',
     category: 'web',
-    tags: ['Crypto', 'Trading', 'FinTech', 'Real-time'],
+    tags: ['Education', 'Student Tools', 'Web App'],
     features: [
-      'Real-time price tracking and alerts',
-      'Advanced technical analysis tools',
-      'Automated trading strategies',
-      'Portfolio management and analytics',
-      'Multi-exchange integration',
-      'Secure wallet management',
-      'Mobile-responsive design'
+      'Task management system',
+      'Calendar integration',
+      'Resource sharing',
+      'User-friendly interface',
+      'Mobile-friendly design',
+      'Collaboration tools'
     ],
-    github: 'https://github.com/yourusername/cryptotrader-x',
-    demo: 'https://cryptotrader-x.demo',
-    technologies: ['Next.js', 'WebSocket', 'Redis', 'PostgreSQL', 'AWS'],
-    gallery: ['https://images.unsplash.com/photo-1605792657660-596af9009e82?q=80&w=2071']
+    github: 'https://github.com/Kallolx/bubtStudenttool',
+    demo: 'https://studbuddy.vercel.app/',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    gallery: ['https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg', 
+      'https://media.discordapp.net/attachments/1313928548616241163/1313986091891691531/image.png?ex=67522068&is=6750cee8&hm=99417c841b8d4c215a928aec1a307a493e12533f11be1dacfdfeb7bef60f0f0d&=&format=webp&quality=lossless&width=1310&height=668'
+    ]
   },
   {
     id: '3',
