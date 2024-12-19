@@ -5,7 +5,12 @@ import path from 'path';
 export default defineConfig({
   plugins: [
     react({
-      jsxImportSource: 'react'
+      // Fast Refresh options
+      fastRefresh: true,
+      // Exclude specific files from refresh
+      exclude: ['**/node_modules/**'],
+      // Include only app files
+      include: ['**/*.tsx', '**/*.ts', '**/*.jsx', '**/*.js']
     })
   ],
   optimizeDeps: {
@@ -13,32 +18,36 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    manifest: true,
+    assetsDir: 'assets',
+    copyPublicDir: true,
+    sourcemap: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true
+      }
+    },
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true
-    },
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
     }
   },
   server: {
     port: 3000,
     hmr: {
-      overlay: false
+      overlay: true,
+      protocol: 'ws'
     },
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Content-Type': 'application/javascript'
+      'Access-Control-Allow-Headers': 'Content-Type'
     }
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
-  }
+  },
+  publicDir: 'public'
 });
