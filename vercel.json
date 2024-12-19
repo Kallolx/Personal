@@ -8,6 +8,22 @@
     }
   ],
   "routes": [
+    {
+      "src": "/favicon.png",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Content-Type": "image/png"
+      },
+      "dest": "/favicon.png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Content-Type": "image/png"
+      },
+      "dest": "/favicon-512.png"
+    },
     { 
       "src": "/site\\.webmanifest",
       "headers": { 

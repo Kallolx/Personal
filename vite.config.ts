@@ -4,10 +4,13 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [
-    react()
+    react({
+      jsxRuntime: 'classic'
+    })
   ],
   build: {
     outDir: 'dist',
+    manifest: true,
     rollupOptions: {
       output: {
         manualChunks: undefined
@@ -16,6 +19,9 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    hmr: {
+      overlay: false
+    },
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET',
