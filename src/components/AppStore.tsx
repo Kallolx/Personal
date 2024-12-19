@@ -18,7 +18,7 @@ import {
   Framer,
   Codesandbox,
 } from 'lucide-react';
-import { fetchGitHubData, type GitHubRepo, fetchGitHubStats, type GitHubStats } from '@/lib/github';
+import { fetchGitHubData, fetchGitHubStats } from "../lib/github";
 
 interface PortfolioItem {
   id: string;
@@ -414,7 +414,21 @@ const PortfolioCard = ({ item, onClick }: { item: PortfolioItem | FolderItem; on
     </div>
   );
 
-  // Wrap with anchor tag only if it's a platform link
+  const cardWrapper = (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4 }}
+      className="group cursor-pointer relative overflow-hidden rounded-lg bg-white/5 
+                border border-white/10 backdrop-blur-sm hover:border-purple-500/20 
+                transition-all duration-300"
+    >
+      {cardContent}
+    </motion.div>
+  );
+
+  // Return different versions based on type
   if (isPlatform && item.links?.live) {
     return (
       <a
@@ -423,35 +437,15 @@ const PortfolioCard = ({ item, onClick }: { item: PortfolioItem | FolderItem; on
         rel="noopener noreferrer"
         className="block"
       >
-        <motion.div
-          layout
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -4 }}
-          className="group cursor-pointer relative overflow-hidden rounded-lg bg-white/5 
-                    border border-white/10 backdrop-blur-sm hover:border-purple-500/20 
-                    transition-all duration-300"
-        >
-          {cardContent}
-        </motion.div>
+        {cardWrapper}
       </a>
     );
   }
 
-  // Regular card without anchor tag
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
-      onClick={onClick}
-      className="group cursor-pointer relative overflow-hidden rounded-lg bg-white/5 
-                border border-white/10 backdrop-blur-sm hover:border-purple-500/20 
-                transition-all duration-300"
-    >
-      {cardContent}
-    </motion.div>
+    <div onClick={onClick}>
+      {cardWrapper}
+    </div>
   );
 };
 
