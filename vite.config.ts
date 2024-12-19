@@ -3,7 +3,12 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      refresh: true,
+      fastRefresh: true
+    })
+  ],
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -17,8 +22,7 @@ export default defineConfig({
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Content-Type': 'application/manifest+json'
+      'Access-Control-Allow-Headers': 'Content-Type'
     }
   },
   resolve: {
