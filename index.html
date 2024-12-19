@@ -2,6 +2,14 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <script type="module">
+    import RefreshRuntime from "/@react-refresh"
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+    <script type="module" src="/@vite/client"></script>
     <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="manifest" href="/site.webmanifest" type="application/manifest+json">

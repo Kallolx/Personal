@@ -514,8 +514,8 @@ export default function Home({ darkMode, setDarkMode }: HomeProps) {
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
-              {filteredProjects.map((project) => (
+            <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6">
+              {projects.map((project) => (
                 <ProjectCard
                   key={project.id}
                   {...project}
