@@ -5,7 +5,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [
     react({
-      jsxRuntime: 'classic'
+      jsxImportSource: 'react'
     })
   ],
   optimizeDeps: {
@@ -14,6 +14,10 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     manifest: true,
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true
+    },
     rollupOptions: {
       output: {
         manualChunks: undefined
