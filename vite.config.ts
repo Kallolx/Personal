@@ -4,10 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [
-    react({
-      refresh: true,
-      fastRefresh: true
-    })
+    react()
   ],
   build: {
     outDir: 'dist',
