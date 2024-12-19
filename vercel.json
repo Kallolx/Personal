@@ -1,15 +1,32 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "pages/api/**/*.ts", "use": "@vercel/node" }
+    { 
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/pages/api/$1" },
     { 
-      "src": "/site.webmanifest",
-      "headers": { "Content-Type": "application/manifest+json" }
+      "src": "/site\\.webmanifest",
+      "headers": { 
+        "Content-Type": "application/manifest+json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "dest": "/site.webmanifest"
     },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/assets/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/assets/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 } 
