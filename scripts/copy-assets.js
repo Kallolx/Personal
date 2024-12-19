@@ -1,14 +1,17 @@
-const fs = require('fs');
-const path = require('path');
+import { existsSync, mkdirSync, copyFileSync } from 'fs';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Ensure dist directory exists
-if (!fs.existsSync('dist')) {
-  fs.mkdirSync('dist');
+if (!existsSync('dist')) {
+  mkdirSync('dist');
 }
 
 // Copy favicon files
-fs.copyFileSync('public/favicon.png', 'dist/favicon.png');
-fs.copyFileSync('public/favicon-512.png', 'dist/favicon-512.png');
-fs.copyFileSync('public/site.webmanifest', 'dist/site.webmanifest');
+copyFileSync('public/favicon.png', 'dist/favicon.png');
+copyFileSync('public/favicon-512.png', 'dist/favicon-512.png');
+copyFileSync('public/site.webmanifest', 'dist/site.webmanifest');
 
 console.log('Assets copied successfully!'); 

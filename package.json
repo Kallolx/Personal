@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run copy-assets",
-    "copy-assets": "node scripts/copy-assets.js",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

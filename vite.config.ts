@@ -4,14 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [
-    react({
-      // Fast Refresh options
-      fastRefresh: true,
-      // Exclude specific files from refresh
-      exclude: ['**/node_modules/**'],
-      // Include only app files
-      include: ['**/*.tsx', '**/*.ts', '**/*.jsx', '**/*.js']
-    })
+    react()
   ],
   optimizeDeps: {
     include: ['react', 'react-dom']
@@ -20,13 +13,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
-    sourcemap: true,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true
-      }
-    },
+    minify: false,
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true
