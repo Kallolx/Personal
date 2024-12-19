@@ -6,6 +6,10 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/pages/api/$1" },
+    { 
+      "src": "/site.webmanifest",
+      "headers": { "Content-Type": "application/manifest+json" }
+    },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 } 

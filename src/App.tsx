@@ -5,6 +5,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import AnimatedCursor from './components/AnimatedCursor'
 import SplashScreen from './components/SplashScreen'
 import AppStore from './components/AppStore'
+import { initTelegramWebApp } from './lib/telegramWebApp'
 
 function AppContent() {
   const location = useLocation();
@@ -42,6 +43,10 @@ export default function App() {
     }, 800)
     return () => clearTimeout(timer)
   }, [])
+
+  useEffect(() => {
+    initTelegramWebApp();
+  }, []);
 
   return (
     <Router>

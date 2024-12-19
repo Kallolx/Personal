@@ -4,27 +4,22 @@ const TELEGRAM_TOKEN = '7524426506:AAFN6OPVaIAvKeSAv_Y3mAUVot3gsaQUpNI';
 const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
 const WEBSITE_URL = 'https://portfolio-five-coral-31.vercel.app';
 
-export const sendTelegramMessage = async (chatId: number, text: string, webAppButton = false) => {
+export const sendTelegramMessage = async (chatId: number, text: string) => {
   try {
-    console.log('Sending message:', { chatId, text, webAppButton }); // Debug log
-
     const message: any = {
       chat_id: chatId,
       text: text,
       parse_mode: 'HTML',
-      reply_markup: webAppButton ? {
-        keyboard: [[
+      reply_markup: {
+        inline_keyboard: [[
           {
-            text: "🌐 View Portfolio",
+            text: "📱 Open in Telegram",
             web_app: { url: WEBSITE_URL }
           }
         ]],
-        resize_keyboard: true,
-        persistent: true
-      } : undefined
+        resize_keyboard: true
+      }
     };
-
-    console.log('Request body:', JSON.stringify(message, null, 2)); // Debug log
 
     const response = await fetch(`${TELEGRAM_API}/sendMessage`, {
       method: 'POST',
@@ -34,9 +29,7 @@ export const sendTelegramMessage = async (chatId: number, text: string, webAppBu
       body: JSON.stringify(message)
     });
 
-    const result = await response.json();
-    console.log('Telegram API response:', result); // Debug log
-    return result;
+    return await response.json();
   } catch (error) {
     console.error('Error sending Telegram message:', error);
     return null;
@@ -45,27 +38,19 @@ export const sendTelegramMessage = async (chatId: number, text: string, webAppBu
 
 export const handleTelegramWebhook = async (update: any) => {
   try {
-    console.log('Received webhook update:', JSON.stringify(update, null, 2)); // Debug log
-
     const message = update.message;
-    if (!message || !message.text) {
-      console.log('No message or text found in update'); // Debug log
-      return;
-    }
+    if (!message || !message.text) return;
 
     let responseText = '';
-    let showWebAppButton = false;
 
     // Handle different commands
     switch (message.text.toLowerCase()) {
       case '/start':
-        responseText = `👋 Welcome to Kamrul's Portfolio Bot!\n\nUse these commands:\n\n🌐 /portfolio - View my portfolio\n📱 /projects - View my projects\n📧 /contact - Get contact info\n👨‍💻 /about - Learn about me`;
-        showWebAppButton = true;
+        responseText = `👋 Welcome to Kamrul's Portfolio Bot!\n\nClick the button below to view my interactive portfolio, or try these commands:\n\n📱 /portfolio - Open portfolio\n🚀 /projects - View projects\n📧 /contact - Contact info\n👨‍💻 /about - About me`;
         break;
 
       case '/portfolio':
-        responseText = '🌐 Here is my portfolio website:';
-        showWebAppButton = true;
+        responseText = '🌐 Click below to open my portfolio:';
         break;
 
       case '/projects':
@@ -85,10 +70,7 @@ export const handleTelegramWebhook = async (update: any) => {
         responseText = "❓ I don't understand that command. Try /start to see available commands.";
     }
 
-    console.log('Preparing to send response:', { responseText, showWebAppButton }); // Debug log
-    const result = await sendTelegramMessage(message.chat.id, responseText, showWebAppButton);
-    console.log('Message sent result:', result); // Debug log
-
+    await sendTelegramMessage(message.chat.id, responseText);
   } catch (error) {
     console.error('Error handling webhook:', error);
   }
