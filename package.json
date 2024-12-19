@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp public/favicon*.png dist/ && cp public/site.webmanifest dist/",
+    "build": "tsc && vite build && npm run copy-assets",
+    "copy-assets": "node scripts/copy-assets.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
