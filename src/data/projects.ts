@@ -261,44 +261,47 @@ export const projects: Project[] = [
   },
   {
     id: '6',
-    title: 'FoodieGo',
-    description: 'Restaurant management and food delivery platform',
-    longDescription: `FoodieGo is a comprehensive restaurant management and food delivery platform that streamlines 
-    operations for restaurants while providing a seamless ordering experience for customers. The platform includes 
-    advanced order management, real-time delivery tracking, and intelligent routing algorithms.`,
-    image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2070',
-    year: '2023',
+    title: 'MS BABUI Traders',
+    description: 'A modern business showcase website for MS BABUI Traders, highlighting their products, services, and company information',
+    longDescription: `MS BABUI Traders is a comprehensive business showcase website that presents the company's 
+    extensive range of products and services. The website features a professional design that effectively communicates 
+    the company's values, expertise, and commitment to quality. Visitors can easily explore product categories, 
+    learn about the company's history, and get in touch for business inquiries.`,
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    year: '2024',
     category: 'web',
-    tags: ['Food Tech', 'Delivery', 'SaaS', 'Mobile App'],
+    tags: ['Business', 'Corporate Website', 'Company Profile', 'Product Showcase'],
     features: [
-      'Order management system',
-      'Real-time delivery tracking',
-      'Inventory management',
-      'POS integration',
-      'Customer mobile app',
-      'Analytics dashboard',
-      'Route optimization'
+      'Company profile and history',
+      'Product and service showcase',
+      'Business information display',
+      'Contact and inquiry forms',
+      'Image galleries',
+      'Responsive design',
+      'SEO optimization',
+      'Social media integration'
     ],
-    github: 'https://github.com/yourusername/foodiego',
-    demo: 'https://foodiego.demo',
+    github: 'https://github.com/Kallolx/ms-babui-traders',
+    demo: 'https://msbabuitrads.vercel.app/',
     technologies: [
       {
-        name: 'React Native',
-        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'
+        name: 'Next.js',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg'
       },
       {
-        name: 'Node.js',
-        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
+        name: 'TypeScript',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg'
+      },
+      {
+        name: 'Tailwind CSS',
+        icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'
       },
       {
         name: 'MongoDB',
         icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg'
-      },
-      {
-        name: 'Socket.io',
-        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/socketio/socketio-original.svg'
       }
     ],
-    gallery: ['https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2070']
+    gallery: [
+      'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D']
   }
 ];
